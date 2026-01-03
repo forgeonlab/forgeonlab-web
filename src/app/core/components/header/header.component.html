@@ -11,13 +11,13 @@
     <a href="#">Contato</a>
 
     <!-- WhatsApp aparece dentro do menu no mobile -->
-    <a class="btn-whatsapp mobile" *ngIf="menuOpen" href="#" (click)="openWhatsApp()">WhatsApp</a>
+    <a class="btn-whatsapp mobile" *ngIf="menuOpen" href="#">WhatsApp</a>
   </nav>
 
   <a class="btn-whatsapp desktop" href="#" (click)="openWhatsApp()">WhatsApp</a>
 
   <!-- Botão hamburguer -->
-  <button class="hamburger" (click)="toggleMenu()">
+  <button class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
