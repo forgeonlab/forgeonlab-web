@@ -1,13 +1,25 @@
 <header>
   <div class="img-container">
-    <img src="assets/icons/forgeon-logo.png" style="height: fit-content;" alt="Logo Forgeon" />
+    <img src="assets/icons/forgeon-logo.png" alt="Logo Forgeon" />
     <strong>FORGEON</strong>
   </div>
-  <nav>
+
+  <nav [class.open]="menuOpen">
     <a href="#">Sobre</a>
     <a href="#">Serviços</a>
     <a href="#">Portfólio</a>
     <a href="#">Contato</a>
+
+    <!-- WhatsApp aparece dentro do menu no mobile -->
+    <a class="btn-whatsapp mobile" href="#">WhatsApp</a>
   </nav>
-  <a class="btn-whatsapp" href="#">WhatsApp</a>
+
+  <a class="btn-whatsapp desktop" href="#">WhatsApp</a>
+
+  <!-- Botão hamburguer -->
+  <button class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
