@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { ButtonComponent } from '../../core/components/button/button.component';
+import { HeroComponent } from "../../shared/hero/hero.component";
+import { ServicosComponent } from "../../shared/servicos/servicos.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, HeroComponent, ServicosComponent],
 })
 export class HomeComponent {
 
