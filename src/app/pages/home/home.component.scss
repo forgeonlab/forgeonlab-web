@@ -1,0 +1,80 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+  padding: 4rem;
+  background: var(--bg);
+
+  h1 {
+    font-size: 3rem;
+    span {
+      color: var(--primary);
+    }
+  }
+
+  p {
+    color: var(--muted);
+    margin: 1.5rem 0;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .secondary {
+    background: white;
+    color: var(--primary);
+  }
+}
+
+.services {
+  padding: 4rem;
+  text-align: center;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  }
+}
+
+.cta {
+  padding: 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    background: #1f7a5b;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+  }
+}
