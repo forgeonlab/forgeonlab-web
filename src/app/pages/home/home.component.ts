@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
-import { ButtonComponent } from '../../core/components/button/button.component';
 import { HeroComponent } from "../../shared/hero/hero.component";
 import { ServicosComponent } from "../../shared/servicos/servicos.component";
+import { PortfolioComponent } from '../../shared/portfolio/portfolio.component';
+import { FooterComponent } from "../../core/components/footer/footer.component";
+import { ContatoComponent } from "../../shared/contato/contato.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [ButtonComponent, HeroComponent, ServicosComponent],
+  imports: [HeroComponent, ServicosComponent, PortfolioComponent, FooterComponent, ContatoComponent],
 })
 export class HomeComponent {
 
