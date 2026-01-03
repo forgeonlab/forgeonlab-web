@@ -17,7 +17,7 @@ export class HomeComponent {
       confirmButtonText: 'Continuar',
       confirmButtonColor: '#7b4dff'
     }).then(() => {
-      window.open('https://wa.me/5500000000000', '_blank');
+      window.open('https://wa.me/11959062010', '_blank');
     });
   }
 }
