@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
+  standalone: true,
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrl: './button.component.scss',
+  imports: [NgClass],
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
+  /**
+   * Variante visual do botão
+   * 'primary' | 'secondary'
+   */
+  @Input() variant: 'primary' | 'secondary' = 'primary';
 
-  constructor() { }
+  /**
+   * Desabilita o botão
+   */
+  @Input() disabled = false;
 
-  ngOnInit() {
+  /**
+   * Evento de clique
+   */
+  @Output() clicked = new EventEmitter<void>();
+
+  onClick() {
+    if (this.disabled) return;
+    this.clicked.emit();
   }
-
 }

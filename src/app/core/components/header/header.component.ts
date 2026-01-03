@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
         confirmButtonText: 'Continuar',
         confirmButtonColor: '#7b4dff'
       }).then(() => {
-        window.open('https://wa.me/11959062010', '_blank');
+        window.open('https://wa.me/011959062010', '_blank');
       });
     }
 }

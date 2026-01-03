@@ -1,186 +1,140 @@
-.hero-image {
-  position: relative;
-}
-
-.hero-image::before {
-  content: '';
-  position: absolute;
-  inset: -40px;
-  background: radial-gradient(circle at top right, #b48cff, transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.hero-image img {
-  position: relative;
-  z-index: 1;
-  border-radius: 24px;
-  box-shadow: 0 40px 80px rgba(0,0,0,.25);
-}
 .hero {
-position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  padding: 0 4rem;
-  background:
-    radial-gradient(circle at top left, #f3eeff 0%, transparent 40%),
-    linear-gradient(180deg, #f6f4fb 0%, #efeaff 100%);
-
-h1 {
-font-size: 3.2rem;
-line-height: 1.2;
-
-
-span {
-color: var(--primary);
-}
-}
-
-
-p {
-margin: 1.5rem 0 2rem;
-color: var(--muted);
-max-width: 480px;
-}
-}
-.hero-content {
-  max-width: 620px;
-  margin-top: -40px; // sobe levemente, igual ao mock
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
+  position: relative;
+  height: 600px;
   width: 100%;
-  height: 120px;
-  background: url('/assets/images/hero-wave.svg') no-repeat bottom center;
-  background-size: cover;
-}
-
-.floating {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background: #b48cff;
-  border-radius: 50%;
-  opacity: .6;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-.actions {
-display: flex;
-gap: 1rem;
-}
-
-
-.btn {
-  padding: 0.9rem 2.2rem;
-  border-radius: 14px;
-  font-weight: 600;
-  letter-spacing: .2px;
-  transition: all .3s ease;
-}
-
-.primary {
-  background: linear-gradient(135deg, #7b4dff, #9f7bff);
-  color: #fff;
-  box-shadow: 0 12px 30px rgba(123,77,255,.35);
-}
-
-.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(123,77,255,.45);
-}
-
-.ghost {
-  background: rgba(255,255,255,.85);
-  backdrop-filter: blur(8px);
-  color: #5b3fdc;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
-}
-
-
-
-.services {
-padding: 5rem 3rem;
-text-align: center;
-}
-
-
-.service-grid {
-margin-top: 3rem;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 1.5rem;
-overflow: auto;
-}
-
-
-.service-card {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.08),
-    inset 0 1px 0 rgba(255,255,255,.4);
-  border: 1px solid rgba(255,255,255,.3);
-}
-
-.portfolio {
-padding: 5rem 3rem;
-text-align: center;
-}
-
-
-.portfolio-grid {
-margin: 3rem 0;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 1.5rem;
-}
-
-
-.project {
-height: 180px;
-border-radius: 14px;
-background: #1e1e2e;
-}
-
-
-.cta {
-padding: 5rem 2rem;
-text-align: center;
-background: linear-gradient(135deg, var(--primary), var(--secondary));
-color: white;
-}
-
-
-.whatsapp {
-margin-top: 1.5rem;
-background: #1f7a5b;
-color: white;
-}
-
-
-.hero {
-  position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #f6f4fb, #efeaff);
+  isolation: isolate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/purple-flow.svg") no-repeat center;
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
-  inset: 0;
-  background: url('/assets/images/waves.svg') center / cover no-repeat;
-  opacity: 0.6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: url("/assets/images/wave-top.svg") no-repeat top center;
+  background-size: cover;
+  z-index: 1;
   pointer-events: none;
+}
+
+/* SVG de fundo */
+.hero-bg {
+  position: absolute; /* 🔥 ISSO resolve o empurrão */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.hero::before,
+.hero::after {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-visual {
+  position: absolute;
+  z-index: 2;
+}
+
+/* TEXTO */
+.hero-content {
+  z-index: 3;
+  max-width: 520px;
+  padding: 140px 0 0 80px;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  line-height: 1.25;
+}
+
+.hero-content span {
+  color: #7b4dff;
+}
+
+.hero-content p {
+  margin: 1.5rem 0 2rem;
+  color: #6b6b6b;
+}
+
+/* VISUAL */
+.hero-visual {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.hero-visual img {
+  width: 360px;
+  opacity: 0.9;
+  filter: drop-shadow(0 40px 80px rgba(123, 77, 255, 0.45));
+}
+
+.actions {
+  display: flex;
+  gap: 1.2rem;
+}
+/* DECORAÇÕES */
+.decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+.decor-cube {
+  width: 26px;
+  top: -40px;
+  left: -30px;
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.decor-dot {
+  width: 14px;
+  top: 30px;
+  right: -28px;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+/* animações */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(8deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
 }
