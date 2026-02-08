@@ -1,5 +1,5 @@
 .footer {
-  padding: 3rem 2.5rem 3.5rem;
+  padding: 2.5rem 2.5rem 2rem;
   background: #111118;
   color: #e2e2ea;
 }
@@ -11,6 +11,35 @@
   gap: 1.6rem;
   font-size: 0.95rem;
   flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.footer-brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #cfcfe8;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
 }
 
 .socials {
@@ -44,6 +73,13 @@
 
 .social-pill:hover {
   transform: translateY(-2px);
+}
+
+.footer-copy {
+  margin-top: 1.8rem;
+  display: block;
+  font-size: 0.85rem;
+  color: #8f8fa8;
 }
 
 @media (max-width: 900px) {

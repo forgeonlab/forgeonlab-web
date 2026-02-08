@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../core/components/button/button.component';
 import { WhatsappButtonComponent } from "../../core/components/whatsapp-button/whatsapp-button.component";
 
 @Component({
   selector: 'app-contato',
-  imports: [ButtonComponent, WhatsappButtonComponent],
+  imports: [WhatsappButtonComponent],
   templateUrl: './contato.component.html',
   styleUrl: './contato.component.scss',
 })
