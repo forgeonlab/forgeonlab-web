@@ -198,7 +198,9 @@ header nav a:hover::after {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  animation: floatSlow 8s ease-in-out infinite;
+  animation: floatSlow 10s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 /* CUBOS */
@@ -210,14 +212,16 @@ header nav a:hover::after {
 .c1 {
   top: 120px;
   right: 420px;
-  animation-duration: 9s;
+  animation-name: floatDeep;
+  animation-duration: 12s;
 }
 
 .c2 {
   top: 260px;
   right: 180px;
   width: 28px;
-  animation-duration: 11s;
+  animation-name: floatMid;
+  animation-duration: 9s;
 }
 
 .c3 {
@@ -225,6 +229,7 @@ header nav a:hover::after {
   right: 280px;
   width: 22px;
   opacity: 0.7;
+  animation-name: floatFast;
   animation-duration: 7s;
 }
 
@@ -233,12 +238,14 @@ header nav a:hover::after {
   width: 18px;
   opacity: 0.85;
   filter: blur(0.3px);
-  animation: pulse 6s ease-in-out infinite;
+  animation: pulseDrift 8s ease-in-out infinite;
 }
 
 .s1 {
   top: 180px;
   right: 340px;
+  animation-name: pulseDrift;
+  animation-duration: 8s;
 }
 
 .s2 {
@@ -246,7 +253,9 @@ header nav a:hover::after {
   right: 260px;
   width: 14px;
   opacity: 0.7;
-  animation-delay: 1.5s;
+  animation-name: pulseDrift;
+  animation-duration: 10s;
+  animation-delay: 1.2s;
 }
 
 .s3 {
@@ -254,26 +263,66 @@ header nav a:hover::after {
   right: 200px;
   width: 12px;
   opacity: 0.6;
-  animation-delay: 3s;
+  animation-name: pulseDrift;
+  animation-duration: 9s;
+  animation-delay: 2.4s;
 }
-@keyframes floatSlow {
+
+@keyframes floatDeep {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   50% {
-    transform: translateY(-14px) rotate(8deg);
+    transform: translate3d(0, -20px, 10px) rotate(6deg) scale(1.03);
   }
 }
 
-@keyframes pulse {
+@keyframes floatMid {
   0%,
   100% {
-    transform: scale(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -14px, 6px) rotate(-6deg) scale(1.02);
+  }
+}
+
+@keyframes floatFast {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -10px, 4px) rotate(10deg) scale(1.04);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes pulseDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
     opacity: 0.7;
   }
   50% {
-    transform: scale(1.25);
+    transform: translate3d(0, -8px, 4px) scale(1.18);
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float,
+  .sphere {
+    animation: none;
   }
 }

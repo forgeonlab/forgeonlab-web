@@ -1,34 +1,30 @@
+.cta-banner {
+  padding: 4.5rem 2rem;
+  background: linear-gradient(135deg, #7b4dff, #9b6bff);
+  color: #ffffff;
+  text-align: center;
+}
+
+.cta-banner__content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cta-banner h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.cta-banner p {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .cta-final {
   position: relative;
   padding: 5.5rem 2rem 6rem;
-  background: linear-gradient(
-    180deg,
-    rgba(247, 244, 255, 0.9),
-    rgba(255, 255, 255, 1)
-  );
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.cta-final::before {
-  top: -120px;
-  right: -80px;
-}
-
-.cta-final::after {
-  bottom: -140px;
-  left: -90px;
-}
-
-.cta-banner {
-  max-width: 760px;
-  margin: 0 auto 2.8rem;
-  padding: 2.8rem 2.5rem;
-  border-radius: 24px;
-  background: rgba(43, 12, 82, 0.85);
-  box-shadow: 0 20px 45px rgba(23, 4, 45, 0.35);
-  position: relative;
-  z-index: 1;
+  background: #ffffff;
 }
 
 .cta-final__content {
@@ -45,7 +41,7 @@
 }
 
 .cta-final h2 {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -90,6 +86,18 @@
   border: 1px solid rgba(0, 0, 0, 0.04);
   display: grid;
   gap: 1.5rem;
+}
+
+.cta-final__form h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2d2d2d;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
 }
 
 .form-field {
@@ -178,9 +186,21 @@
   .cta-final__form {
     padding: 2rem;
   }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
+  .cta-banner {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .cta-banner h2 {
+    font-size: 2rem;
+  }
+
   .cta-final {
     padding: 4.5rem 1.5rem 5rem;
   }

@@ -1,5 +1,5 @@
 .portfolio {
-  padding: 5rem 2rem;
+  padding: 5.5rem 2rem;
   text-align: center;
   background: linear-gradient(
     180deg,
@@ -44,8 +44,29 @@
 
 .portfolio-card img {
   width: 100%;
-  height: 220px;
+  height: 210px;
   object-fit: cover;
+}
+
+.portfolio-card--mock {
+  background: #2c2b3d;
+  color: #fff;
+}
+
+.portfolio-mock {
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c2b3d, #363352);
+}
+
+.portfolio-mock-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #7b4dff;
+  box-shadow: inset 0 0 0 14px rgba(255, 255, 255, 0.18);
 }
 
 .portfolio-caption {
@@ -54,6 +75,11 @@
   font-weight: 600;
   color: #2d2d3a;
   text-align: left;
+}
+
+.portfolio-card--mock .portfolio-caption {
+  color: #ffffff;
+  background: #2c2b3d;
 }
 
 /* RESPONSIVO */
