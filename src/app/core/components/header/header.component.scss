@@ -3,7 +3,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.25rem 3rem;
   position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 1);
@@ -18,10 +18,11 @@ nav {
 }
 
 header nav a {
-  margin: 0 16px;
+  margin: 0 14px;
   text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
+  color: #1f1f1f;
+  font-weight: 600;
+  font-size: 0.95rem;
   position: relative;
 }
 
@@ -40,26 +41,43 @@ header nav a:hover::after {
   width: 100%;
 }
 
-.btn-whatsapp {
-  background: #25d366;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 12px;
-  text-decoration: none;
+.social-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
   font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
   transition: var(--transition);
 }
 
-.btn-whatsapp:hover {
-  transform: scale(1.05);
+.social-pill.instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+  box-shadow: 0 10px 20px rgba(221, 42, 123, 0.25);
 }
 
-.btn-whatsapp.mobile {
+.social-pill.whatsapp {
+  background: #25d366;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
+}
+
+.social-pill:hover {
+  transform: translateY(-2px);
+}
+
+.social-pills.mobile {
   display: none;
-}
-
-.btn-whatsapp.desktop {
-  display: inline-flex;
 }
 
 .img-container {
@@ -91,7 +109,7 @@ header nav a:hover::after {
 
 @media (max-width: 900px) {
   header {
-    // padding: 16px 24px;
+    padding: 1rem 1.5rem;
     z-index: 2;
   }
 
@@ -127,6 +145,16 @@ header nav a:hover::after {
     font-size: 1.4rem;
   }
 
+  .social-pills.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .social-pills.desktop {
+    display: none;
+  }
+
   .img-container {
     display: flex;
     align-items: center;
@@ -159,15 +187,9 @@ header nav a:hover::after {
     transform: rotate(-45deg) translate(6px, -6px);
   }
 
-  /* Botões */
-  .btn-whatsapp.desktop {
-    display: none;
-  }
-
-  .btn-whatsapp.mobile {
-    display: inline-flex;
-    margin-top: 16px;
-    font-size: 1.2rem;
+  .social-pill {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.6rem;
   }
 }
 
