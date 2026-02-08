@@ -1,14 +1,56 @@
 <section class="cta-final">
-  <div class="cta-banner">
-    <h2>Tire sua ideia do papel!</h2>
-    <p>
-      Entre em contato com nossa equipe e solicite um
-      <strong>orçamento</strong> sem compromisso.
-    </p>
-  </div>
+  <div class="cta-final__content">
+    <div class="cta-final__text">
+      <h2>Tire sua ideia do papel!</h2>
+      <p>
+        Entre em contato com nossa equipe e solicite um
+        <strong>orçamento</strong> sem compromisso.
+      </p>
 
-  <app-whatsapp-button
-  >
-    Entre em contato pelo WhatsApp
-  </app-whatsapp-button>
+      <div class="cta-final__info">
+        <div class="info-item">
+          <span class="info-label">E-mail</span>
+          <span class="info-value">contato&#64;forgeonlab.com</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Telefone</span>
+          <span class="info-value">(11) 99999-0000</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Atendimento</span>
+          <span class="info-value">Seg à Sex · 9h às 18h</span>
+        </div>
+      </div>
+
+      <app-whatsapp-button>
+        Entre em contato pelo WhatsApp
+      </app-whatsapp-button>
+    </div>
+
+    <form class="cta-final__form">
+      <div class="form-field">
+        <label for="contato-nome">Nome</label>
+        <input id="contato-nome" type="text" placeholder="Seu nome" />
+      </div>
+      <div class="form-field">
+        <label for="contato-email">E-mail</label>
+        <input id="contato-email" type="email" placeholder="voce@email.com" />
+      </div>
+      <div class="form-field">
+        <label for="contato-telefone">Telefone</label>
+        <input id="contato-telefone" type="tel" placeholder="(00) 00000-0000" />
+      </div>
+      <div class="form-field">
+        <label for="contato-mensagem">Mensagem</label>
+        <textarea
+          id="contato-mensagem"
+          rows="4"
+          placeholder="Conte um pouco sobre o seu projeto"
+        ></textarea>
+      </div>
+      <button class="cta-final__submit" type="submit">
+        Enviar mensagem
+      </button>
+    </form>
+  </div>
 </section>
