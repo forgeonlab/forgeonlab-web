@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 560px;
+  min-height: 520px;
   width: 100%;
   overflow: hidden;
   isolation: isolate;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 70px;
-  padding: 0 120px;
+  padding: 40px 96px 0;
 }
 
 /* SVG de fundo */
@@ -63,11 +63,92 @@
 .hero-visual {
   position: relative;
   z-index: 2;
-  width: min(440px, 40vw);
-  height: 330px;
+  width: min(400px, 36vw);
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 12px;
+}
+
+.hero-parallax {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 52%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.parallax-item {
+  position: absolute;
+  transform: translate3d(0, calc(var(--parallax-y, 0px) * var(--depth, 0.3)), 0);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.cube {
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(154, 115, 255, 0.9), rgba(123, 77, 255, 0.8));
+  box-shadow:
+    0 18px 40px rgba(123, 77, 255, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.cube-lg {
+  width: 52px;
+  height: 52px;
+  top: 140px;
+  right: 420px;
+}
+
+.cube-md {
+  width: 36px;
+  height: 36px;
+  top: 260px;
+  right: 210px;
+}
+
+.cube-sm {
+  width: 26px;
+  height: 26px;
+  top: 110px;
+  right: 300px;
+}
+
+.sphere {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #d4c1ff, #7b4dff 70%);
+  box-shadow: 0 18px 36px rgba(123, 77, 255, 0.35);
+}
+
+.sphere-lg {
+  width: 22px;
+  height: 22px;
+  top: 210px;
+  right: 360px;
+}
+
+.sphere-md {
+  width: 16px;
+  height: 16px;
+  top: 300px;
+  right: 260px;
+}
+
+.sphere-sm {
+  width: 12px;
+  height: 12px;
+  top: 160px;
+  right: 220px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-item {
+    transition: none;
+    transform: none;
+  }
 }
 
 .hero-card {
@@ -142,8 +223,8 @@
 
 @media (max-width: 1024px) {
   .hero {
-    height: 520px;
-    padding: 0 64px;
+    min-height: 480px;
+    padding: 32px 64px 0;
     gap: 48px;
   }
 
@@ -167,6 +248,10 @@
     padding: 120px 32px 72px;
     flex-direction: column;
     gap: 48px;
+  }
+
+  .hero-parallax {
+    display: none;
   }
 
   /* texto centralizado */
